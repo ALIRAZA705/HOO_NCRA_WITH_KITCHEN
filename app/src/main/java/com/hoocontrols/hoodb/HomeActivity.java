@@ -98,26 +98,41 @@ public class HomeActivity extends AppCompatActivity {
     String Ack              = "HooPDM/from/StateACK";
     String backTrack        = "HooPDMbackTrack";
 
+    String Con_3G_A = "314837293"; //( hall 3g A)
+    String Hal_3G_B ="3260702318";
+    String Hal_3G_C ="3260702492";
+    String Hal_3G_D="3260702584"; //(office 3g D)
+    String  Offic_2G_A = "839067592"; //(hall 2g A)
+String Offic_Fan_A ="839050764"; //(hall fan A)
+    String Hal_3G_A ="3260702309"; //(Conf_3G_A )
+    String Hal_Fan_A ="315669085"; //(Office fan A)
+    String kitche_1G_A="3260700336";
+    String kitche_Fan_A="576418228";
+    String WashRom1_2G_A="839069304";
+    String WashRom1_1G_A="839059835";
+    String WashRom2_2G_A="839067602";
+    String WashRom2_1G_A="839059865";
+    String Breake_4G_A="2491745745";
 
-    String Hall_3G_A        = "HooPDM/to/756816707";    //Conf_3G_A============
-    String Hall_3G_B        = "HooPDM/to/756816936";
-    String Hall_3G_C        = "HooPDM/to/759587720";
-    String Hall_2G_A        = "HooPDM/to/756848281";    //Office_2G_A==========
-    String Breaker_4G_A     = "HooPDM/to/2491745745";
-    String Conf_3G_A        = "HooPDM/to/756816688";    //Hall_3G_A============
-    String Office_Fan_A     = "HooPDM/to/3156690853";   //Hall_Fan_A===========
-    String Hall_Fan_A       = "HooPDM/to/839050764";    //Office_Fan_A===========
+    String Hall_3G_A        = "HooPDM/to/" + Con_3G_A;    //Conf_3G_A============
+    String Hall_3G_B        = "HooPDM/to/" + Hal_3G_B;
+    String Hall_3G_C        = "HooPDM/to/"  + Hal_3G_C;
+    String Hall_2G_A        = "HooPDM/to/" + Offic_2G_A;    //Office_2G_A==========
+    String Breaker_4G_A     = "HooPDM/to/" + Breake_4G_A;
+    String Conf_3G_A        = "HooPDM/to/" + Hal_3G_A ;    //Hall_3G_A============
+    String Office_Fan_A     = "HooPDM/to/" + Hal_Fan_A;   //Hall_Fan_A===========
+    String Hall_Fan_A       = "HooPDM/to/" +Offic_Fan_A ;    //Office_Fan_A===========
 
     ////////////////////
-    String kitchen_Fan_A     = "HooPDM/to/576418228";   //kitchen_Fan_A===========
+    String kitchen_Fan_A     = "HooPDM/to/" + kitche_Fan_A;   //kitchen_Fan_A===========
 //////////////////////////
-String kitchen_1G_A = "HooPDM/to/987571766";
+String kitchen_1G_A = "HooPDM/to/" + kitche_1G_A;
 /////////////////////
-    String WashRoom1_2G_A   = "HooPDM/to/756848243";
-    String WashRoom1_1G_A   = "HooPDM/to/987573640";
-    String WashRoom2_2G_A   = "HooPDM/to/756848278";
-    String WashRoom2_1G_A   = "HooPDM/to/987571783";
-    String Office_3G_A      = "HooPDM/to/756816775";    //Hall_3G_D============
+    String WashRoom1_2G_A   = "HooPDM/to/" + WashRom1_2G_A ;
+    String WashRoom1_1G_A   = "HooPDM/to/" + WashRom1_1G_A;
+    String WashRoom2_2G_A   = "HooPDM/to/" +WashRom2_2G_A ;
+    String WashRoom2_1G_A   = "HooPDM/to/" + WashRom2_1G_A;
+    String Office_3G_A      = "HooPDM/to/" + Hal_3G_D;    //Hall_3G_D============
     String Breaker_AllOnOff = "HooPDM/to/broadcast";
 
 
@@ -643,7 +658,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             SwitchNumber = "T3";
         }
 
-        if (messageParts[0].compareTo("756816688")==0) {
+        if (messageParts[0].compareTo(Conf_3G_A)==0) {
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_Conf_3G_A_1 = "OF1";
@@ -688,7 +703,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             }
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
-        }else if (messageParts[0].compareTo("756816707")==0) {
+        }else if (messageParts[0].compareTo(Hal_3G_A)==0) {
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_Hall_3G_A_1 = "OF1";
@@ -733,7 +748,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             }
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
-        }else if (messageParts[0].compareTo("756816936")==0) {
+        }else if (messageParts[0].compareTo(Hal_3G_B)==0) {
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_Hall_3G_B_1 = "OF1";
@@ -778,7 +793,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             }
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
-        }else if (messageParts[0].compareTo("2491745745")==0) {
+        }else if (messageParts[0].compareTo(Breake_4G_A)==0) {
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_Hall_3G_B_1 = "OF1";
@@ -827,7 +842,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
         }
-        else if (messageParts[0].compareTo("839050764")==0) {                     // Hall Fan A
+        else if (messageParts[0].compareTo(Hal_Fan_A)==0) {                     // Hall Fan A
             if (SwitchNumber.compareTo("DIM")==0) {
                 if (messageParts[2].compareTo("FanOFF")==0) {
                     BackTrack_Hall_Fan_A_State = "FanOFF";
@@ -861,7 +876,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             }
 
         }
-        else if (messageParts[0].compareTo("3156690853")==0) {                     // Office Fan A
+        else if (messageParts[0].compareTo(Offic_Fan_A )==0) {                     // Office Fan A
             if (SwitchNumber.compareTo("DIM")==0) {
                 if (messageParts[2].compareTo("FanOFF")==0) {
                     BackTrack_Office_Fan_A_State = "FanOFF";
@@ -894,7 +909,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
                 }
             }
             
-        }else if (messageParts[0].compareTo("759587720")==0) {
+        }else if (messageParts[0].compareTo(Hal_3G_C)==0) { // hall 3g c
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_Hall_3G_C_1 = "OF1";
@@ -939,7 +954,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             }
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
-        }else if (messageParts[0].compareTo("756848281")==0) {
+        }else if (messageParts[0].compareTo(Offic_2G_A)==0) { // 0FFICE 2G a
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_Hall_2G_A_1 = "OF1";
@@ -970,7 +985,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             }
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
-        }else if (messageParts[0].compareTo("756848243")==0) {
+        }else if (messageParts[0].compareTo(WashRom1_2G_A)==0) { //washroom 2g a
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_WashRoom1_2G_A_1 = "OF1";
@@ -1001,7 +1016,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             }
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
-        }else if (messageParts[0].compareTo("987573640")==0) {
+        }else if (messageParts[0].compareTo(WashRom1_1G_A)==0) {
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_WashRoom1_1G_A_1 = "OF2";
@@ -1018,7 +1033,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             }
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
-        }else if (messageParts[0].compareTo("756848278")==0) {
+        }else if (messageParts[0].compareTo(WashRom2_2G_A)==0) {
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_WashRoom2_2G_A_1 = "OF1";
@@ -1050,7 +1065,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
         }
-        else if (messageParts[0].compareTo("987571783")==0) {
+        else if (messageParts[0].compareTo(WashRom2_1G_A)==0) {
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_WashRoom2_1G_A_1 = "OF2";
@@ -1067,7 +1082,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
             }
             //Opening The Main Rooms Fragment when change occurs from hardware
             HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
-        }else if (messageParts[0].compareTo("756816775")==0) {
+        }else if (messageParts[0].compareTo(Hal_3G_D)==0) {/// hall 3g D
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[2].compareTo("0")==0) {
                     BackTrack_Office_3G_A_1 = "OF1";
@@ -1148,7 +1163,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
 
 //        Toast.makeText(HomeActivity.this, "", Toast.LENGTH_LONG).show();
 
-        if (messageParts[0].compareTo("756816688")==0) {        // Conf 3G A
+        if (messageParts[0].compareTo(Con_3G_A )==0) {        // Conf 3G A
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF1")==0) {
                     BackTrack_Conf_3G_A_1 = "OF1";
@@ -1186,7 +1201,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
 
                 }
             }
-        }else if (messageParts[0].compareTo("756816707")==0) {          // Hall 3G A
+        }else if (messageParts[0].compareTo(Hal_3G_A)==0) {          // Hall 3G A
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF1")==0) {
                     BackTrack_Hall_3G_A_1 = "OF1";
@@ -1224,7 +1239,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
 
                 }
             }
-        }else if (messageParts[0].compareTo("756816936")==0) {          // Hall 3G B
+        }else if (messageParts[0].compareTo(Hal_3G_B)==0) {          // Hall 3G B
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF1")==0) {
                     BackTrack_Hall_3G_B_1 = "OF1";
@@ -1261,7 +1276,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
                     editor.apply();
                 }
             }
-        }else if (messageParts[0].compareTo("759587720")==0) {          // Hall 3G C
+        }else if (messageParts[0].compareTo(Hal_3G_C)==0) {          // Hall 3G C
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF1")==0) {
                     BackTrack_Hall_3G_C_1 = "OF1";
@@ -1298,7 +1313,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
                     editor.apply();
                 }
             }
-        }else if (messageParts[0].compareTo("756848281")==0) {          // Hall 2G A
+        }else if (messageParts[0].compareTo(Offic_2G_A)==0) {          // Office 2G A
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF1")==0) {
                     BackTrack_Hall_2G_A_1 = "OF1";
@@ -1324,7 +1339,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
 
                 }
             }
-        }else if (messageParts[0].compareTo("2491745745")==0) {          // Main Power 4G A
+        }else if (messageParts[0].compareTo(Breake_4G_A)==0) {          // Main Power 4G A
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF1")==0) {
                     BackTrack_Breaker_4G_A_1 = "OF1";
@@ -1372,7 +1387,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
                     editor.apply();
                 }
             }
-        }else if (messageParts[0].compareTo("756816775")==0) {          // Office 3G A
+        }else if (messageParts[0].compareTo(Hal_3G_D)==0) {          // hall 3G D
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF1")==0) {
                     BackTrack_Office_3G_A_1 = "OF1";
@@ -1407,7 +1422,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
                     editor.apply();
                 }
             }
-        }else if (messageParts[0].compareTo("3156690853")==0) {          // Hall Fan A
+        }else if (messageParts[0].compareTo(Hal_Fan_A)==0) {          // Hall Fan A
             if (SwitchNumber.compareTo("DIM")==0) {
                 if (messageParts[1].compareTo("FanON")==0) {
                     BackTrack_Hall_Fan_A_State = "FanON";
@@ -1439,7 +1454,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
                     editor.apply();
                 }
             }
-        }else if (messageParts[0].compareTo("3156690853")==0) {          // Office Fan A
+        }else if (messageParts[0].compareTo(Offic_Fan_A)==0) {          // Office Fan A
             if (SwitchNumber.compareTo("DIM")==0) {
                 if (messageParts[1].compareTo("FanON")==0) {
                     BackTrack_Office_Fan_A_State = "FanON";
@@ -1471,7 +1486,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
                     editor.apply();
                 }
             }
-        }else if (messageParts[0].compareTo("756848243")==0) {          // WashRoom1 2G A
+        }else if (messageParts[0].compareTo(WashRom1_1G_A)==0) {          // WashRoom1 2G A
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF1")==0) {
                     BackTrack_WashRoom1_2G_A_1 = "OF1";
@@ -1497,7 +1512,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
 
                 }
             }
-        }else if (messageParts[0].compareTo("756848278")==0) {          // WashRoom2 2G A
+        }else if (messageParts[0].compareTo(WashRom2_2G_A)==0) {          // WashRoom2 2G A
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF1")==0) {
                     BackTrack_WashRoom2_2G_A_1 = "OF1";
@@ -1523,7 +1538,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
 
                 }
             }
-        }else if (messageParts[0].compareTo("987573640")==0) {          // WashRoom1 1G A
+        }else if (messageParts[0].compareTo(WashRom1_1G_A)==0) {          // WashRoom1 1G A
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF2")==0) {
                     BackTrack_WashRoom1_1G_A_1 = "OF2";
@@ -1537,7 +1552,7 @@ String kitchen_1G_A = "HooPDM/to/987571766";
 
                 }
             }
-        }else if (messageParts[0].compareTo("987571783")==0) {          // WashRoom2 1G A
+        }else if (messageParts[0].compareTo(WashRom2_1G_A)==0) {          // WashRoom2 1G A
             if (SwitchNumber.compareTo("T1")==0) {
                 if (messageParts[1].compareTo("OF2")==0) {
                     BackTrack_WashRoom2_1G_A_1 = "OF2";
