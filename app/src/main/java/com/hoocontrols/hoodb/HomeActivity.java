@@ -53,8 +53,8 @@ import org.json.JSONObject;
 
 public class HomeActivity extends AppCompatActivity {
 
-    SharedPreferences pref;
-    SharedPreferences.Editor editor;
+    public static SharedPreferences pref;
+    public static SharedPreferences.Editor editor;
 
 //    SharedPreferences.Editor editor;
 
@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity {
     String brokerState = "DEAD";
     String[] parts;
 
- //   static String MQTTHOST = "tcp://172.20.10.11:1883";
+  // static String MQTTHOST = "tcp://172.20.10.11:1883";
  //  static String MQTTHOST = "tcp://192.168.1.148:1883";
  //static String MQTTHOST = "tcp://192.168.43.218:1883";
 // static String MQTTHOST = "tcp://192.168.1.150:1883";
@@ -295,6 +295,8 @@ String kitchen_1G_A = "HooPDM/to/" + kitche_1G_A;
             }
         }
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -593,7 +595,7 @@ String kitchen_1G_A = "HooPDM/to/" + kitche_1G_A;
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new RoomsFragment(), null).commit();
+                HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new set_net_id(), null).commit();
             }
         });
         homeButton.setOnClickListener(new View.OnClickListener() {
@@ -613,6 +615,8 @@ String kitchen_1G_A = "HooPDM/to/" + kitche_1G_A;
 
 //        Toast.makeText(HomeActivity.this, "End Stage", Toast.LENGTH_LONG).show();
     }
+
+
 
 //    public void MYS1(){
 //        String message = "ON1";
